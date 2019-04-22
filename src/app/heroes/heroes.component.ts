@@ -19,7 +19,8 @@ export class HeroesComponent implements OnInit {
   }
   // https://angular.io/tutorial/toh-pt4#observable-data
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
   }
 
   ngOnInit() {
